@@ -1,0 +1,33 @@
+{
+  "canisters": {
+    "icrc1_ledger_canister": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/0d2b3965c813cd3a39ceedacd97fa2eee8760074/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/0d2b3965c813cd3a39ceedacd97fa2eee8760074/canisters/ic-icrc1-ledger.wasm.gz"
+    },
+    "icrc1_ledger_backend": {
+      "main": "src/icrc1_ledger_backend/main.mo",
+      "type": "motoko",
+      "dependencies": ["icrc1_ledger_canister"]
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
